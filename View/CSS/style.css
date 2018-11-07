@@ -391,14 +391,6 @@ footer{
 
 }
 
-.input_textarea{
-    resize: none;
-    font-size: 16pt;
-    
-    width: 600px;
-    height: 250px;
-}
-
 #footer_content{
 
     width: 1400px;

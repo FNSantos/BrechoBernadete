@@ -127,10 +127,26 @@
             echo($nome);
 
         }
+        public function remover(){
+
+            $funcionarioDAO = new FuncionarioDAO();
+
+            $funcionarioDAO->remover($_POST["idFuncionario"]);
+
+        }
 
         public function obterAutenticacao(){
 
             echo($_SESSION["nome"]);
+
+        }
+         public function atualizarSituacao(){
+
+            $funcionarioDAO = new FuncionarioDAO();
+
+            echo($_POST["situacao"]);
+
+            $funcionarioDAO->atualizarSituacao($_POST["situacao"], $_POST["idFuncionario"]);
 
         }
 

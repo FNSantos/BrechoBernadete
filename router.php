@@ -217,6 +217,297 @@
                         }
 
                         break;
+            
+                           case "Categoria":
+
+                    // echo("Nível");
+
+                    require_once("Controller/Categoria.php");
+
+                    $categoria = new CategoriaControl();
+
+                    switch ($_POST["acao"]) {
+
+                        case "inserir":
+
+                           $categoria->inserir();
+
+                            break;
+
+                        case "obterTodos":
+
+                           $categoria->obterTodos();
+
+                            break;
+
+                        case "obterUm":
+
+                            $categoria->obterUm();
+
+                            break;
+
+                        case "atualizar":
+
+                            $categoria->atualizar();
+
+                            break;
+
+                        case "atualizarSituacao":
+
+                           $categoria->atualizarSituacao();
+
+                            break;
+
+                        case "remover":
+
+                            $categoria->remover();
+
+                            break;
+                            
+                        case "obterEstilos":
+
+                            $categoria->obterEstilos();
+
+                            break;
+                            
+                        
+
+                    }
+
+                    break;
+            
+            
+            
+                            
+                 case "Subcategoria":
+
+                    // echo("Nível");
+
+                    require_once("Controller/Subcategoria.php");
+
+                    $subcategoria = new SubcategoriaControl();
+
+                    switch ($_POST["acao"]) {
+
+                        case "inserir":
+
+                           $subcategoria->inserir();
+
+                            break;
+
+                        case "obterTodos":
+
+                           $subcategoria->obterTodos();
+
+                            break;
+
+                        case "obterUm":
+
+                            $subcategoria->obterUm();
+
+                            break;
+
+                        case "atualizar":
+
+                            $subcategoria->atualizar();
+
+                            break;
+
+                        case "atualizarSituacao":
+
+                           $subcategoria->atualizarSituacao();
+
+                            break;
+
+                        case "remover":
+
+                            $subcategoria->remover();
+
+                            break;
+                            
+                        case "obterCategorias":
+
+                            $subcategoria->obterCategorias();
+
+                            break;
+                            
+                        
+
+                    }
+
+                    break;
+
+                        case "Blog Postagem":
+
+                            // echo("Nível");
+
+                            require_once("Controller/BlogPostagem.php");
+
+                            $blogPostagem = new BlogPostagemControl();
+
+                            switch ($_POST["acao"]) {
+
+                                case "inserir":
+
+                                    $blogPostagem->inserir();
+
+                                    break;
+
+                                case "obterTodos":
+
+                                    $blogPostagem->obterTodos();
+
+                                    break;
+                                case "obterCategorias":
+
+                                    $blogPostagem->obterCategorias();
+
+                                    break;
+
+                                case "obterUm":
+
+                                    $blogPostagem->obterUm();
+
+                                    break;
+
+                                case "atualizar":
+
+                                    $blogPostagem->atualizar();
+
+                                    break;
+
+                                case "atualizarSituacao":
+
+                                    $blogPostagem->atualizarSituacao();
+
+                                    break;
+
+                                case "remover":
+
+                                    $blogPostagem->remover();
+
+                                    break;
+
+                            }
+                        break;
+
+                        case "produto":
+
+            require_once("Controller/Produto.php");
+
+            $produto = new ProdutoControl();
+
+            switch ($_POST["acao"]) {
+
+                case "inserir":
+
+                    $produto->inserir();
+
+                    break;
+
+                case "obterTodos":
+
+                    $produto->obterTodos();
+
+                    break;
+
+                case "obterUm":
+
+                    $produto->obterUm();
+
+                    break;
+
+                case "atualizar":
+
+                    $produto->atualizar();
+
+                    break;
+
+                case "remover":
+
+                    $produto->remover();
+
+                    break;
+
+                case "obterEstilo":
+
+                    $produto->obterEstilo();
+
+                    break;
+                
+                case "obterSubcategoria":
+
+                    $produto->obterSubcategoria();
+
+                    break;
+                
+                case "obterCategoria":
+
+                    $produto->obterCategoria();
+
+                    break;
+
+                case "obterFiltro":
+
+                    $produto->obterFiltro();
+
+                    break;
+
+
+            }
+
+            break;
+                        case "Cliente":
+
+                            require_once("Controller/Cliente.php");
+
+                            $cliente = new ClienteControl();
+
+                            switch ($_POST["acao"]) {
+
+                                case "inserir":
+
+                                    $cliente->inserir();
+
+                                    break;
+
+                                case "obterTodos":
+
+                                    $cliente->obterTodos();
+
+                                    break;
+                                case "obterCategorias":
+
+                                    $cliente->obterCategorias();
+
+                                    break;
+
+                                case "obterUm":
+
+                                    $cliente->obterUm();
+
+                                    break;
+
+                                case "atualizar":
+
+                                    $cliente->atualizar();
+
+                                    break;
+
+                                case "atualizarSituacao":
+
+                                    $cliente->atualizarSituacao();
+
+                                    break;
+
+                                case "remover":
+
+                                    $cliente->remover();
+
+                                    break;
+
+                            }
+
 
     }
 

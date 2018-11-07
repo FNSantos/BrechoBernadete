@@ -137,8 +137,10 @@
             $conexao = ConexaoBanco::obterConexao();
 
             $SQL = "DELETE FROM tbl_funcionario WHERE id_funcionario = ?";
+            
+            $stm = $conexao->prepare($SQL);
 
-            $stm = $conexao->prepare();
+            $stm->bindParam(1, $idFuncionario);
 
             $envio = $stm->execute();
 
@@ -157,10 +159,10 @@
         }
 
         public function autenticar($email, $senha){
-
+            session_start();
             $conexao = ConexaoBanco::obterConexao();
 
-            $SQL = "SELECT nome FROM tbl_funcionario WHERE email = ? AND senha = ?";
+            $SQL = "SELECT nome, id_funcionario FROM tbl_funcionario WHERE email = ? AND senha = ?";
 
             $stm = $conexao->prepare($SQL);
 
@@ -176,12 +178,41 @@
             if($resultSet = $stm->fetch()){
 
                 $nome = $resultSet["nome"];
+                $_SESSION['idFuncionario'] = $resultSet["id_funcionario"];
 
             }
 
             return $nome;
 
         }
+        
+        public function atualizarSituacao($situacao, $id){
+
+            $conexao = ConexaoBanco::obterConexao();
+
+            $SQL = "UPDATE tbl_funcionario SET situacao = ? WHERE id_funcionario = ?";
+
+            $stm = $conexao->prepare($SQL);
+
+            $stm->bindValue(1, $situacao);
+            $stm->bindValue(2, $id);
+
+            $envio = $stm->execute();
+
+            $conexao = null;
+
+            if($envio){
+
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+       
 
     }
 

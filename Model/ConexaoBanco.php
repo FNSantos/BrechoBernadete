@@ -2,7 +2,7 @@
 
     define("dominio", "localhost");
     define("usuario", "root");
-    define("senha", "bcd127");
+    define("senha", "");
     define("banco", "db_brecho");
 
     class ConexaoBanco {
